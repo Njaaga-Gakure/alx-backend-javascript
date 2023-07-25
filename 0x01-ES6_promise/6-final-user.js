@@ -7,6 +7,6 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
     uploadPhoto(fileName),
   ]).then((result) => {
     const { status, reason } = result[1];
-    return [{ ...result[0] }, { status, value: reason }];
+    return [{ ...result[0] }, { status, value: `${reason}` }];
   });
 }
