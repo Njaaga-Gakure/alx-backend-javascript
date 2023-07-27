@@ -46,7 +46,7 @@ export default class HolbertonCourse {
   }
 
   set students(value) {
-    if (!Array.isArra(value)) {
+    if (!Array.isArray(value)) {
       throw new TypeError('Students must be an array of strings');
     }
     value.forEach((item) => {
