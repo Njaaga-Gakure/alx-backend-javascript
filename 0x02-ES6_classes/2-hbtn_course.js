@@ -3,7 +3,7 @@ export default class HolbertonCourse {
     if (typeof name !== 'string') {
       throw new TypeError('Name must be a string');
     }
-    if (typeof length !== 'number') {
+    if (!Number.isInteger(length)) {
       throw new TypeError('Length must be a number');
     }
     if (!Array.isArray(students)) {
@@ -35,7 +35,7 @@ export default class HolbertonCourse {
   }
 
   set length(value) {
-    if (typeof value !== 'number') {
+    if (!Number.isInteger(value)) {
       throw new TypeError('Length must be a number');
     }
     this._length = value;
