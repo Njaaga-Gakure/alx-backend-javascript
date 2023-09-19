@@ -1,3 +1,5 @@
+import { readFile } from 'fs';
+
 const readDatabase = (path) => (
   new Promise((resolve, reject) => {
     readFile(path, 'utf-8', (err, result) => {
