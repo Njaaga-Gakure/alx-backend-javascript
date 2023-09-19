@@ -9,7 +9,8 @@ const countStudents = (path) => (
       } else {
         let data = result.toString().split('\n').slice(1);
         data = data.filter((item) => item !== '');
-        console.log(`Number of students: ${data.length}`);
+        const totalStr = `Number of students: ${data.length}`;
+        console.log(totalStr);
         const { CS, SWE } = data.reduce((stats, current) => {
           const dataArr = current.split(',');
           const name = dataArr[0];
@@ -17,9 +18,11 @@ const countStudents = (path) => (
           stats[field].push(name);
           return stats;
         }, { CS: [], SWE: [] });
-        console.log(`Number of students in CS: ${CS.length}. List: ${CS.join(', ')}`);
-        console.log(`Number of students in SWE: ${SWE.length}. List: ${SWE.join(', ')}`);
-        resolve();
+        const csStr = `Number of students in CS: ${CS.length}. List: ${CS.join(', ')}`;
+        const sweStr = `Number of students in SWE: ${SWE.length}. List: ${SWE.join(', ')}`;
+        console.log(csStr);
+        console.log(sweStr);
+        resolve(`${totalStr}\n${csStr}\n${sweStr}`);
       }
     });
   })
